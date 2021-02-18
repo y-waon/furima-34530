@@ -2,14 +2,16 @@
 
 ## usersテーブル
 
-| Column             | Type   | Options             |
-| ------------------ | ------ | ------------------  |
-| email              | string | null: false, unique |
-| encrypted_password | string | null: false         |
-| name               | string | null: false         |
-| nickname           | string | null: false         |
-| katakana           | string | null: false         |
-| birthday           | string | null: false         |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------  |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| first_name         | string | null: false               |
+| name               | string | null: false               |
+| first_katakana     | string | null: false               |
+| katakana           | string | null: false               |
+| birthday           | string | null: false               |
 
 ### Association
 - has_many :products
@@ -17,16 +19,17 @@
 
 ## productテーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| title      | string     | null: false                    |
-| text       | text       | null: false                    |
-| price      | string     | null: false                    |
-| Category   | string     | null: false                    |
-| burden     | string     | null: false                    |
-| area       | string     | null: false                    |
-| guideline  | string     | null: false                    |
-| user       | references | null: false, foreign_key: true |
+| Column       | Type        | Options                        |
+| ------------ | ----------- | ------------------------------ |
+| title        | string      | null: false                    |
+| text         | text        | null: false                    |
+| status       | string      | null: false                    |
+| price        | integer     | null: false                    |
+| Category_id  | integer     | null: false                    |
+| burden_id    | integer     | null: false                    |
+| area_id      | integer     | null: false                    |
+| guideline_id | integer     | null: false                    |
+| user         | references  | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -44,15 +47,17 @@
 - belongs_to :product
 - has_one :adress
 
-## adressテーブル
+## addressテーブル
 
 | Column         | Type         | Options                   |
 | post_number    | string       | null: false               |
-| Prefectures    | string       | null: false               |
+| area_id        | integer      | null: false               |
 | Municipalities | string       | null: false               |
 | house_number   | string       | null: false               |
-| building_name  | string       | null: false               |
+| building_name  | string       |                           |
 | phone_number   | string       | null: false               |
+| buy            | references | null: false, foreign_key: true |
+
 
 ### Association
 - belongs_to :buy
