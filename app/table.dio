@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-18T02:47:04.898Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="qc6xSkkPuzBQGYmgLzh6" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-18T03:19:07.204Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="FtWt-SUcx5bcuEA_W6To" type="embed">
     <diagram id="nU2l55pg74OGxFFe2ZU8" name="ページ1">
         <mxGraphModel dx="987" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -13,7 +13,7 @@
                 <mxCell id="39" value="・text      ・category    ・burden       ・area" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="37">
                     <mxGeometry y="56" width="310" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="40" value="・price      ・guideline" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="37">
+                <mxCell id="40" value="・price      ・guideline　・stutas" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="37">
                     <mxGeometry y="86" width="310" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="buy(購入記録)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
@@ -58,7 +58,7 @@
                 <mxCell id="72" value="adress" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="414" y="290" width="350" height="116" as="geometry"/>
                 </mxCell>
-                <mxCell id="73" value="・post_number　　　　　　・hosenumber" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="72">
+                <mxCell id="73" value="・post_number　　　・hosenumber 　・buyテーブル情報" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="72">
                     <mxGeometry y="26" width="350" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="・Prefectures　　　　　　　・building_name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="72">
