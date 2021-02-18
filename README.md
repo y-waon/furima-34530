@@ -8,9 +8,9 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | first_name         | string | null: false               |
-| name               | string | null: false               |
+| last_name          | string | null: false               |
 | first_katakana     | string | null: false               |
-| katakana           | string | null: false               |
+| last_katakana      | string | null: false               |
 | birthday           | string | null: false               |
 
 ### Association
@@ -23,9 +23,9 @@
 | ------------ | ----------- | ------------------------------ |
 | title        | string      | null: false                    |
 | text         | text        | null: false                    |
-| status       | string      | null: false                    |
 | price        | integer     | null: false                    |
-| Category_id  | integer     | null: false                    |
+| status_id    | integer      | null: false                    |
+| category_id  | integer     | null: false                    |
 | burden_id    | integer     | null: false                    |
 | area_id      | integer     | null: false                    |
 | guideline_id | integer     | null: false                    |
@@ -52,7 +52,7 @@
 | Column         | Type         | Options                   |
 | post_number    | string       | null: false               |
 | area_id        | integer      | null: false               |
-| Municipalities | string       | null: false               |
+| municipalities | string       | null: false               |
 | house_number   | string       | null: false               |
 | building_name  | string       |                           |
 | phone_number   | string       | null: false               |
