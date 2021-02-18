@@ -2,13 +2,14 @@
 
 ## usersテーブル
 
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| email          | string | null: false |
-| password       | string | null: false |
-| name           | string | null: false |
-| nickname       | string | null: false |
-| katakana       | string | null: false |
+| Column             | Type   | Options             |
+| ------------------ | ------ | ------------------  |
+| email              | string | null: false, unique |
+| encrypted_password | string | null: false         |
+| name               | string | null: false         |
+| nickname           | string | null: false         |
+| katakana           | string | null: false         |
+| birthday           | string | null: false         |
 
 ### Association
 - has_many :products
@@ -21,6 +22,10 @@
 | title      | string     | null: false                    |
 | text       | text       | null: false                    |
 | price      | string     | null: false                    |
+| Category   | string     | null: false                    |
+| burden     | string     | null: false                    |
+| area       | string     | null: false                    |
+| guideline  | string     | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
