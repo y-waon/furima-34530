@@ -32,7 +32,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Category is not a number")
       end
       it 'カテゴリーの情報が必須であること(1代入)' do
-        @product.category_id = '1'
+        @product.category_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include("Category must be other than 1")
       end
@@ -42,7 +42,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Status is not a number")
       end
       it '商品の状態についての情報が必須であること(1代入)' do
-        @product.status_id = '1'
+        @product.status_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include("Status must be other than 1")
       end
@@ -52,7 +52,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Burden is not a number")
       end
       it '配送料の負担についての情報が必須であること(1代入)' do
-        @product.burden_id = '1'
+        @product.burden_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include("Burden must be other than 1")
       end
@@ -62,7 +62,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Area is not a number")
       end
       it '発送元の地域についての情報が必須であること(1代入)' do
-        @product.area_id = '1'
+        @product.area_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include("Area must be other than 1")
       end
@@ -72,7 +72,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Guideline is not a number")
       end
       it '発送までの日数についての情報が必須であること(1代入)' do
-        @product.guideline_id = '1'
+        @product.guideline_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include("Guideline must be other than 1")
       end
@@ -82,12 +82,12 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Price can't be blank")
       end
       it '販売価格は、¥300以下だと保存不可能であること' do
-        @product.price = '200'
+        @product.price = 200
         @product.valid?
         expect(@product.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it '販売価格は、¥19999999以上だと保存不可能であること' do
-        @product.price = '19999999'
+        @product.price = 19999999
         @product.valid?
         expect(@product.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
@@ -102,7 +102,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Price is not a number")
       end
       it '販売価格は半角英数は保存不能であること' do
-        @product.price = '12rff'
+        @product.price = '12rfe'
         @product.valid?
         expect(@product.errors.full_messages).to include("Price is not a number")
       end

@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :text
+    validates :image
   end
   validates :price,        numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true, format: { with: /\A[0-9]+\z/ }
   with_options numericality: { other_than: 1 } do
@@ -13,7 +14,6 @@ class Product < ApplicationRecord
     validates :guideline_id
     validates :status_id
   end
-  validates :image,       presence: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
   belongs_to :burden
