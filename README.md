@@ -24,7 +24,7 @@
 | title        | string      | null: false                    |
 | text         | text        | null: false                    |
 | price        | integer     | null: false                    |
-| status_id    | integer      | null: false                    |
+| status_id    | integer     | null: false                    |
 | category_id  | integer     | null: false                    |
 | burden_id    | integer     | null: false                    |
 | area_id      | integer     | null: false                    |
@@ -49,13 +49,13 @@
 
 ## addressテーブル
 
-| Column         | Type         | Options                   |
-| post_number    | string       | null: false               |
-| area_id        | integer      | null: false               |
-| municipalities | string       | null: false               |
-| house_number   | string       | null: false               |
-| building_name  | string       |                           |
-| phone_number   | string       | null: false               |
+| Column         | Type         | Options                      |
+| post_number    | string       | null: false                  |
+| area_id        | integer      | null: false                  |
+| municipalities | string       | null: false                  |
+| house_number   | string       | null: false                  |
+| building_name  | string       |                              |
+| phone_number   | string       | null: false                  |
 | buy            | references | null: false, foreign_key: true |
 
 
