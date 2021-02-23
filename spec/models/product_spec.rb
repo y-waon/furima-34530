@@ -31,25 +31,50 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include("Category is not a number")
       end
+      it 'カテゴリーの情報が必須であること(1代入)' do
+        @product.category_id = '1'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Category must be other than 1")
+      end
       it '商品の状態についての情報が必須であること' do
         @product.status_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Status is not a number")
+      end
+      it '商品の状態についての情報が必須であること(1代入)' do
+        @product.status_id = '1'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Status must be other than 1")
       end
       it '配送料の負担についての情報が必須であること' do
         @product.burden_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Burden is not a number")
       end
+      it '配送料の負担についての情報が必須であること(1代入)' do
+        @product.burden_id = '1'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Burden must be other than 1")
+      end
       it '発送元の地域についての情報が必須であること' do
         @product.area_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Area is not a number")
       end
+      it '発送元の地域についての情報が必須であること(1代入)' do
+        @product.area_id = '1'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Area must be other than 1")
+      end
       it '発送までの日数についての情報が必須であること' do
         @product.guideline_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Guideline is not a number")
+      end
+      it '発送までの日数についての情報が必須であること(1代入)' do
+        @product.guideline_id = '1'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Guideline must be other than 1")
       end
       it '販売価格についての情報が必須であること' do
         @product.price = ''
@@ -66,13 +91,23 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
-      it '販売価格は全角数字のみ保存不能であること' do
+      it '販売価格は全角数字は保存不能であること' do
         @product.price = '１４３４'
         @product.valid?
         expect(@product.errors.full_messages).to include("Price is not a number")
       end
-      it '販売価格は全角数字のみ保存不能であること' do
+      it '販売価格は半角英語は保存不能であること' do
         @product.price = 'aisjd'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Price is not a number")
+      end
+      it '販売価格は半角英数は保存不能であること' do
+        @product.price = '12rff'
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Price is not a number")
+      end
+      it '販売価格は全角英語は保存不能であること' do
+        @product.price = 'ASSDF'
         @product.valid?
         expect(@product.errors.full_messages).to include("Price is not a number")
       end

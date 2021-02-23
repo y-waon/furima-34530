@@ -1,14 +1,18 @@
 class Product < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  validates :title,        presence: true
-  validates :text,         presence: true
-    validates :price,        numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true, format: { with: /\A[0-9]+\z/ }
-  validates :area_id,      numericality: { other_than: 1 }
-  validates :burden_id,    numericality: { other_than: 1 }
-  validates :category_id,  numericality: { other_than: 1 }
-  validates :guideline_id, numericality: { other_than: 1 }
-  validates :status_id,    numericality: { other_than: 1 }
+  with_options presence: true do
+    validates :title
+    validates :text
+  end
+  validates :price,        numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true, format: { with: /\A[0-9]+\z/ }
+  with_options numericality: { other_than: 1 } do
+    validates :area_id
+    validates :burden_id
+    validates :category_id
+    validates :guideline_id
+    validates :status_id
+  end
   validates :image,       presence: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
