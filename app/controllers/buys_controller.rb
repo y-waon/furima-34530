@@ -1,11 +1,11 @@
 class BuysController < ApplicationController
   before_action :authenticate_user!
+  before_action :find, only: [:index, :create, :move_to_index]
+  before_action :move_to_index, only: [:index]
   def index
     @buy =  DonationAddress.new
-    @product = Product.find(params[:product_id])
   end
   def create
-    @product = Product.find(params[:product_id])
     @buy = DonationAddress.new(address_params)
     if @buy.valid?
       pay_item
@@ -27,5 +27,17 @@ class BuysController < ApplicationController
         card: address_params[:token], 
         currency: 'jpy'
       )
+  end
+  def move_to_index
+    if @product.buy.present?
+      redirect_to root_path
+    else
+      if current_user.id == @product.user_id
+        redirect_to root_path
+      end
+    end
+  end
+  def find
+    @product = Product.find(params[:product_id])
   end
 end

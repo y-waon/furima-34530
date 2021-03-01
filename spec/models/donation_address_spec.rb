@@ -12,7 +12,6 @@ RSpec.describe DonationAddress, type: :model do
   describe "住所入力" do
     context '新規出品できるとき' do
       it "一連の登録" do
-        # binding.pry
         expect(@buy).to be_valid
       end
     end
@@ -56,6 +55,11 @@ RSpec.describe DonationAddress, type: :model do
         @buy.phone_number = '000000000000'
         @buy.valid?
         expect(@buy.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
+      it "トークンが空だと登録できない" do
+        @buy.token = ''
+        @buy.valid?
+        expect(@buy.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
