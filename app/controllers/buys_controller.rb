@@ -29,12 +29,8 @@ class BuysController < ApplicationController
       )
   end
   def move_to_index
-    if @product.buy.present?
+    if @product.buy.present? || current_user.id == @product.user_id
       redirect_to root_path
-    else
-      if current_user.id == @product.user_id
-        redirect_to root_path
-      end
     end
   end
   def find

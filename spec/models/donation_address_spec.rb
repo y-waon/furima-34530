@@ -61,6 +61,16 @@ RSpec.describe DonationAddress, type: :model do
         @buy.valid?
         expect(@buy.errors.full_messages).to include("Token can't be blank")
       end
+      it "user_idが空だと登録できない" do
+        @buy.user_id = ''
+        @buy.valid?
+        expect(@buy.errors.full_messages).to include("User can't be blank")
+      end
+      it "product_idが空だと登録できない" do
+        @buy.product_id = ''
+        @buy.valid?
+        expect(@buy.errors.full_messages).to include("Product can't be blank")
+      end
     end
   end
 end
