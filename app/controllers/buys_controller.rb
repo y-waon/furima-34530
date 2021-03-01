@@ -1,7 +1,7 @@
 class BuysController < ApplicationController
   before_action :authenticate_user!
   before_action :find, only: [:index, :create, :move_to_index]
-  before_action :move_to_index, only: [:index]
+  before_action :move_to_index, only: [:index,:create]
   def index
     @buy =  DonationAddress.new
   end

@@ -6,7 +6,7 @@ class DonationAddress
   with_options presence: true do
     validates :municipalities
     validates :house_number
-    validates :phone_number, length: {maximum: 11}
+    validates :phone_number, format: { with: /\A[0-9]+\z/}, length: { maximum: 11 }
     validates :user_id
     validates :product_id
     validates :token
