@@ -36,7 +36,7 @@ RSpec.describe DonationAddress, type: :model do
         expect(@buy.errors.full_messages).to include("Area is not a number") 
       end
       it "都道府県が必須(1代入)" do
-        @buy.area_id = '1'
+        @buy.area_id = 1
         @buy.valid?
         expect(@buy.errors.full_messages).to include("Area must be other than 1") 
       end
