@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_one_attached :image
   belongs_to :user
+  has_one :buy
   with_options presence: true do
     validates :title
     validates :text
